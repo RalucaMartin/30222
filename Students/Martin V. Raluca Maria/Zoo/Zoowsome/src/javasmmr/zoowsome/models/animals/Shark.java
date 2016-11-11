@@ -1,6 +1,9 @@
 package javasmmr.zoowsome.models.animals;
-
+import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
 import java.util.Random;
+import javasmmr.zoowsome.services.factories.Constants;
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
 
 public class Shark extends Aquatic {
 	public Shark(int avgSwimDepth, String name, int nrOfLegs, Double maintenanceCost, Double dangerPerc) {
@@ -9,7 +12,6 @@ public class Shark extends Aquatic {
 		this.setName(name); 
 		this.setNrOfLegs(nrOfLegs);
 	}
-	
 	public Shark() {
 		this(110, "Sharky", 3, 5.8, 1.0);
 	}
@@ -22,6 +24,10 @@ public class Shark extends Aquatic {
 		else {
 			return false;
 		}
+	}
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
+		super.encodeToXml(eventWriter);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animal.Aquatic.Shark);
 	}
 
 }

@@ -1,6 +1,9 @@
 package javasmmr.zoowsome.models.animals;
-
+import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
 import java.util.Random;
+import javasmmr.zoowsome.services.factories.Constants;
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
 
 public class Tiger extends Mammal {
 	
@@ -10,7 +13,7 @@ public class Tiger extends Mammal {
 		this.setNormalBodyTemp(normalBodyTemp);
 		this.setNrOfLegs(nrOfLegs);
 		this.setPercBodyHair(percBodyHair);
-	}
+	}	
 	
 	public Tiger() {
 		this(15, 80, "Tigy", 4, 8.0, 1.0);
@@ -25,5 +28,8 @@ public class Tiger extends Mammal {
 			return false;
 		}
 	}
-
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
+		super.encodeToXml(eventWriter);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animal.Mammal.Tiger);
+	}
 }

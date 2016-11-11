@@ -1,6 +1,9 @@
 package javasmmr.zoowsome.models.animals;
-
+import javasmmr.zoowsome.repositories.AnimalRepository;
 import java.util.Random;
+import javasmmr.zoowsome.services.factories.Constants;
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
 
 public class Cockroach extends Insect {
 	public Cockroach(Boolean canFly, Boolean isDangerous, String name, int nrOfLegs, Double maintenanceCost, Double dangerPerc) {
@@ -10,6 +13,7 @@ public class Cockroach extends Insect {
 		this.setName(name);
 		this.setNrOfLegs(nrOfLegs);
 	}
+
 	public Cockroach() {
 		this(true, true, "Gandi", 8, 0.2, 0.5);
 	}
@@ -22,5 +26,11 @@ public class Cockroach extends Insect {
 		else {
 			return false;
 		}
+	
+	}
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
+		super.encodeToXml(eventWriter);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animal.Insect.Cockroach);
 	}
 }
+	

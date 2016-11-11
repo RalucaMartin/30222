@@ -13,7 +13,6 @@ public abstract class Employee {
 	public String getName() {
 		return name;
 	}
-	
 	public void setId() {
 		this.id = (long) Math.floor(Math.random() * 9000000000000L) + 1000000000000L;
 	}

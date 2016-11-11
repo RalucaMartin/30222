@@ -1,0 +1,23 @@
+//Sum of multiples
+import java.util.*;
+public class MainClass {
+	public static void main(String[] args) {
+		int sum = 0, temp;
+		int number;
+		
+		Scanner in= new Scanner(System.in);
+		System.out.println( "Please,enter the number: " );
+		number= in.nextInt();
+		
+		for( temp=1; temp<number; temp++ ) {
+			if( temp % 3 == 0 ) {
+				sum+=temp;
+			} else {
+				if( temp % 5 == 0 ) {
+				sum+=temp;
+				}
+			  }
+		}
+		System.out.println( "Suma multiplilor de 3 sau 5 este: "+sum );
+	}
+}

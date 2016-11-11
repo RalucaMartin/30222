@@ -1,0 +1,18 @@
+//Fibonacci even sum
+
+public class MainClass {
+	public static void main(String[] args) {
+		int fibOne=0, fibTwo=1, fibThree, evenSum=0;
+			
+		fibThree= fibOne + fibTwo;	
+		for( ;fibThree<4000000; ) {
+			if(fibThree % 2 == 0) {
+				evenSum += fibThree;
+			}
+			fibOne= fibTwo;
+			fibTwo= fibThree;
+			fibThree= fibOne + fibTwo;
+		}
+		System.out.println( "The sum of even valued terms is: "+evenSum );
+	}
+}

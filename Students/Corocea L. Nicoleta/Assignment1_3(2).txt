@@ -1,0 +1,27 @@
+
+public class Palindrome3Digits {
+	public static void main(String[] args){
+	System.out.println("The largest palindrome is "+thePalindrome());
+	}
+	public static int thePalindrome(){
+		for (int i=999;i>100;i--)
+			for (int j=998;j>=100;j--){
+				if (isPalindrome(i*j)==true)
+					return (int)i*j;
+			}
+		return 0;
+	}
+	public static boolean isPalindrome(int n){
+		int nr=0;
+		int aux=n;
+		while(n!=0){
+			nr=nr*10+n%10;
+			n=n/10;
+		}
+		if (aux==nr)
+			return true;
+		else
+			return false;
+	}
+
+}

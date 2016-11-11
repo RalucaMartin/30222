@@ -1,8 +1,5 @@
 # Java
 
-##
-
-
 ### What to expect
 - A good progression scheme through the basic concepts of OOP (in Java)
 - A good chunk of exercises and assignments which should offer (if properly done) good insight on new OOP concepts and Java's specific innards.

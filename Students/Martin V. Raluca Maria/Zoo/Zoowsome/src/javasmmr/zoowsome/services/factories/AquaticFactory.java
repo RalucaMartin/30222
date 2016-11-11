@@ -15,10 +15,10 @@ public class AquaticFactory extends SpeciesFactory {
 			throw new Exception ("Invalid animal exception!");
 		}
 
-	}
-	
+	}	
 	public AquaticFactory(Double maintenanceCost) {
 		maintenanceCost = maintenanceCost;
 	}
+
 }
 

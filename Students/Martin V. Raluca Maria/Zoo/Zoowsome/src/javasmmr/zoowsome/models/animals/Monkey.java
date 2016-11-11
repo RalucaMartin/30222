@@ -1,6 +1,9 @@
 package javasmmr.zoowsome.models.animals;
-
+import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
 import java.util.Random;
+import javasmmr.zoowsome.services.factories.Constants;
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
 
 public class Monkey extends Mammal {
 	public Monkey(float normalBodyTemp, float percBodyHair, String name, int nrOfLegs, Double maintenanceCost, Double dangerPerc) {
@@ -24,5 +27,10 @@ public class Monkey extends Mammal {
 			return false;
 		}
 	}
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
+		super.encodeToXml(eventWriter);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animal.Mammal.Monkey);
+	}
+
 
 }

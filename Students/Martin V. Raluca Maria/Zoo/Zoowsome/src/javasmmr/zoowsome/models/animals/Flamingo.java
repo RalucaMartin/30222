@@ -1,6 +1,9 @@
 package javasmmr.zoowsome.models.animals;
-
+import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
 import java.util.Random;
+import javasmmr.zoowsome.services.factories.Constants;
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
 
 public class Flamingo extends Bird {
 	public Flamingo(Boolean migrates, int avgFlightAltitude, String name, int nrOfLegs, Double maintenanceCost, Double dangerPerc) {
@@ -10,6 +13,7 @@ public class Flamingo extends Bird {
 		this.setName(name);
 		this.setNrOfLegs(nrOfLegs); 
 	}
+
 	public Flamingo() {
 		this(false, 150, "Flamy", 2, 6.4, 0.2);
 	}
@@ -23,5 +27,10 @@ public class Flamingo extends Bird {
 			return false;
 		}
 	}
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
+		super.encodeToXml(eventWriter);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animal.Bird.Flamingo);
+	}
+
 
 }

@@ -1,6 +1,9 @@
 package javasmmr.zoowsome.models.animals;
-
+import javasmmr.zoowsome.repositories.AnimalRepository;
 import java.util.Random;
+import javasmmr.zoowsome.services.factories.Constants;
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
 
 public class Spider extends Insect {
 	public Spider(Boolean canFly, Boolean isDangerous, String name, int nrOfLegs, Double maintenanceCost, Double dangerPerc) {
@@ -9,7 +12,7 @@ public class Spider extends Insect {
 		this.setIsDangerous(isDangerous);
 		this.setName(name); 
 		this.setNrOfLegs(nrOfLegs);
-	}
+	}		
 	public Spider() {
 		this(true, true, "Spidy", 8, 5.5, 1.0);
 	}
@@ -22,5 +25,9 @@ public class Spider extends Insect {
 		else {
 			return false;
 		}
+	}
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
+		super.encodeToXml(eventWriter);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animal.Insect.Spider);
 	}
 }

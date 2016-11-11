@@ -1,6 +1,12 @@
 package javasmmr.zoowsome.models.animals;
+import javasmmr.zoowsome.repositories.AnimalRepository;
+
+import javax.swing.text.Element;
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
 
 public abstract class Aquatic extends Animal {
+
 	
 	public Aquatic(Double maintenanceCost, Double dangerPerc) {
 		super(maintenanceCost, dangerPerc);
@@ -20,5 +26,11 @@ public abstract class Aquatic extends Animal {
 		this.avgSwimDepth = avgSwimDepth;
 	}
 	
-
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
+		super.encodeToXml(eventWriter);
+		createNode(eventWriter, "avgSwimDepth", String.valueOf(getAvgSwimDepth()));	
+	}
+	public void decodeFromXml(Element element) {
+		setTakenCareOf(Boolean.valueOf(element.getElementsByTagName("avgSwimDepth").item(0).getTextContent()));	
+	}
 }
