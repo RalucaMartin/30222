@@ -1,6 +1,10 @@
 package javasmmr.zoowsome.models.animals;
 
 public abstract class Aquatic extends Animal {
+	
+	public Aquatic(double maintenanceCost, double dangerPerc) {
+		super(maintenanceCost, dangerPerc);
+	}
 	private int avgSwimDepth;
 	public enum waterType {saltWater, freshWater};
 	private waterType water;
@@ -18,5 +22,6 @@ public abstract class Aquatic extends Animal {
 	public void setWater(waterType water) {
 		this.water = water;
 	}
+	
 
 }

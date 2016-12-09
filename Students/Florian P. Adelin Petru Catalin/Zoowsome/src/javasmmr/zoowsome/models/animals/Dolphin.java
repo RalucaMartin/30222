@@ -1,13 +1,14 @@
 package javasmmr.zoowsome.models.animals;
 
-import javasmmr.zoowsome.models.animals.Constants.Animals;
-
 public class Dolphin extends Aquatic {
-	public Dolphin() {
-		super();
-		this.setName(Animals.Aquatics.DOLPHIN);
-		this.setNrOfLegs(0);
-		this.avgSwimDepth=1500;
-		this.waterType=Enum.Saltwater;
+	public Dolphin(){
+		this("Dolphin",0,700,Enum.Saltwater);
+	}
+	public Dolphin(String name, int nrOfLegs, int avgSwimDepth, Enum waterType) {
+		super(0.2,0.5);
+		setNrOfLegs(nrOfLegs);
+		setName(name);
+		setAvgSwimDepth(avgSwimDepth);
+		setWaterType(waterType);
 	}
 }

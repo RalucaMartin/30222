@@ -1,18 +1,27 @@
 package models.animals;
+import static repositories.AnimalRepository.createNode;
+
+import javax.xml.stream.*;
+
+import org.w3c.dom.Element;
+
+import services.factories.Constants; 
+
 
 public class Mosquito extends Insect{
 
 	private boolean canCarryVirus;
 	
-	/*
+	
 	public Mosquito(){
+		super(0.1, 0.1);
 		nrOfLegs = 8;
 		name = "Mosquito";
 		isDangerous = false;
 		canFly = true;
 		setCanCarryVirus(false);
 	}
-	*/
+	
 	
 	public Mosquito(boolean canCarryVirus, boolean canFly, boolean isDangerous){
 		super(0.1, 0.1);
@@ -23,6 +32,15 @@ public class Mosquito extends Insect{
 		this.canFly = canFly;
 	}
 
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException{
+		super.encodeToXml(eventWriter);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Insects.MOSQUITO);
+	}
+	
+	public void decodeFromXml(Element element) {  
+		setCanCarryVirus(Boolean.valueOf(element.getElementsByTagName("canCarryVirus").item(0).getTextContent()));  	
+ 	} 
+	
 	public boolean isCanCarryVirus() {
 		return canCarryVirus;
 	}

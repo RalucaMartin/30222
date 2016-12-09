@@ -1,21 +1,31 @@
 package controllers;
 
 import models.animals.Animal;
-import models.employees.Caretaker;
-import models.employees.Employee;
+import models.employees.*;
+import repositories.AnimalRepository;
 
-import java.lang.reflect.Field;
+import java.io.IOException;
 import java.util.*;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.stream.XMLStreamException;
+
+import org.xml.sax.SAXException;
+
 import services.factories.*;
 
 public class MainController {
 
-	public static void main(String[] args){
+	public static void main(String[] args) throws XMLStreamException, ParserConfigurationException, SAXException, IOException{
 		
 		Random random1 = new Random();
 		Random random2 = new Random();
 		String result = null;
 		Animal[] animal = new Animal[Constants.noOfAnimals];
+		ArrayList<Animal> animals = new ArrayList<Animal>();
+		ArrayList<Animal> animalsLoad = new ArrayList<Animal>();
+		AnimalRepository animalRep = new AnimalRepository();
+		
 		
 		CaretakerFactory caretakerFactory = new CaretakerFactory();
 		Employee []caretaker = new Caretaker[Constants.nrOfWorkers];
@@ -133,7 +143,15 @@ public class MainController {
 						
 				}
 			}
-			
+		
+		
+		for(int i = 0; i < Constants.noOfAnimals; i++){
+			animals.add(animal[i]);
+		}
+		
+		animalRep.save(animals);
+		
+		
 		for(int i = 0; i < Constants.noOfAnimals; i++){
 		if(animal[i].isTakenCareOf()){
 			System.out.println("Animal " + animal[i].getName() + " has been taken care of \n");

@@ -1,6 +1,6 @@
 package models.animals;
 
-import java.util.Random;
+
 
 public class Turtle extends Reptile{
 
@@ -14,17 +14,6 @@ public class Turtle extends Reptile{
 		setLayEggs(layEggs);
 		setMaintenanceCost(maintenanceCost);
 		setDangerPerc(dangerPerc);
-	}
-
-	@Override
-	public boolean kill() {
-		Random random = new Random();
-		int survivingOdds = random.nextInt(10);
-		
-		if ((survivingOdds/10) < dangerPerc){
-			return true;
-		}
-		return false;
 	}
 
 }

@@ -26,7 +26,6 @@ public class Caretaker extends Employee implements Caretaker_I {
 		this.workingHours = workHours;
 	}
 
-	@Override
 	public String takeCareOf(Animal animal) {
 		if (animal.kill()){
 			return Constants.Employees.Caretakers.TCO_KILLED;

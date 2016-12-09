@@ -1,5 +1,5 @@
 package models.animals;
-import java.util.*;
+
 
 public class Butterfly extends Insect {
 
@@ -16,13 +16,4 @@ public class Butterfly extends Insect {
 		setDangerPerc(dangerPerc);
 	}
 
-	public boolean kill() {
-		Random random = new Random();
-		int survivingOdds = random.nextInt(10);
-		
-		if ((survivingOdds/10) < dangerPerc){
-			return true;
-		}
-		return false;
-	}
 }

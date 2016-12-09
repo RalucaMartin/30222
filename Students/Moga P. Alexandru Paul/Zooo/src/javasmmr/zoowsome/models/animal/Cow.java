@@ -3,12 +3,15 @@ package javasmmr.zoowsome.models.animal;
 public class Cow extends Mammal{
 
 	public Cow() {
-		super();
-		// TODO Auto-generated constructor stub
-		this.setNrOfLegs(4);
-		this.setName("Cow");
-		this.setNormalBodyTemp(37);
-		this.setPercBodyHair(78);
+		this("Cow",4,37f,80f);
+	}
+
+	public Cow(String name, int nrOfLegs, float normalBodyTemp, float percBodyHair){
+		super(0.1, 0.2);
+		setName(name);
+		setNrOfLegs(nrOfLegs);
+		setNormalBodyTemp(normalBodyTemp);
+		setPercBodyHair(percBodyHair);
 	}
 
 }

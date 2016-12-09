@@ -12,6 +12,11 @@ public final class Constants {
 	public static final int startHourDanger = 9;
 	public static final int endHourDanger = 22;
 	public static final double percDeng = 0.2;
+
+	public static final class XML_TAGS{
+		public static final String ANIMAL = "Animal";
+		public static final String DISCRIMINANT = "DISCRIMINANT";
+	}
 	
 	public static final class Employees{
 		public static final class Caretakers{

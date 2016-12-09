@@ -3,7 +3,12 @@ package javasmmr.zoowsome.models.animal;
 public abstract class Bird extends Animal {
 	private boolean migrates;
 	private int avgFlightAltitude;
-	public boolean isMigrates() {
+	
+	public Bird(double maintenanceCost, double dangerPerc) {
+		super(maintenanceCost, dangerPerc);
+		// TODO Auto-generated constructor stub
+	}
+	public boolean getMigrates() {
 		return migrates;
 	}
 	public void setMigrates(boolean migrates) {

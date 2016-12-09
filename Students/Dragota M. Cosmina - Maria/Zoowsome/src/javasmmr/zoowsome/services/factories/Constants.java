@@ -20,7 +20,7 @@ public final class Constants {
 		public static final class Reptiles {
 			public static final String LIZARD = "Lizard";
 			public static final String SNAKE = "Snake";
-			public static final String CROCODILE = "Crocodile";	
+			public static final String CROCODILE = "Crocodile";
 		}
 
 		public static final class Birds {
@@ -40,7 +40,19 @@ public final class Constants {
 			public static final String CRICKET = "Cricket";
 			public static final String SPIDER = "Spider";
 		}
+
 	}
 
+	public static final class Employees {
+		public static final String CARETAKERS = "Caretakers";
+	}
+
+	public static final class Caretakers {
+		public static final String BIRD_KEEPER = "Bird_keeper";
+		public static final String MAMMAL_KEEPER = "Mammal_keeper";
+		public static final String AQUATIC_KEEPER = "Aquatic_keeper";
+		public static final String REPTILE_KEEPER = "Reptile_keeper";
+
+	}
 
 }

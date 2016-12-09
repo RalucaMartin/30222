@@ -1,13 +1,14 @@
 package javasmmr.zoowsome.models.animals;
 
-import javasmmr.zoowsome.models.animals.Constants.Animals;
-
 public class Cow extends Mammal {
-	public Cow() {
-		super();
-		this.setNrOfLegs(4);
-		this.setName(Animals.Mammals.COW);
-		this.normalBodyTemp=40;
-		this.percBodyHair=95;
+	public Cow(){
+		this("Cow",4,38,90);
+	}
+	public Cow(String name, int nrOfLegs, float normalBodyTemp, float percBodyHair) {
+		super(0.2,0.5);
+		setNrOfLegs(nrOfLegs);
+		setName(name);
+		setNormalBodyTemp(normalBodyTemp);
+		setPercBodyHair(percBodyHair);
 	}
 }

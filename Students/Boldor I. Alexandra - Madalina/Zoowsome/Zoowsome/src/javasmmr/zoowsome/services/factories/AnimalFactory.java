@@ -1,6 +1,7 @@
 package javasmmr.zoowsome.services.factories;
 
 public class AnimalFactory {
+	
 	public SpeciesFactory getSpeciesFactory(String type) throws Exception {
 		if (Constants.Species.Mammals.equals(type)) {
 			return new MammalFactory();

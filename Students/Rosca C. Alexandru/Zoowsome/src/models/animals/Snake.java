@@ -1,6 +1,13 @@
 package models.animals;
 
+import static repositories.AnimalRepository.createNode;
+
 import java.util.*;
+
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
+
+import org.w3c.dom.Element;
 
 import services.factories.Constants;
 
@@ -9,14 +16,15 @@ public class Snake extends Reptile{
 	Date time = new Date();
 	
 	private boolean isPoisonous; 
-	/*
+	
 	public Snake(){
+		super(3, 0.3);
 		nrOfLegs = 0;
 		name = "Snake";
 		laysEggs = true;
 		isPoisonous = true;
 	}
-	*/
+
 	
 	public Snake(boolean isPoisonous, boolean laysEggs){
 		super(3, 0.3);
@@ -26,6 +34,16 @@ public class Snake extends Reptile{
 		this.laysEggs = laysEggs;
 		
 	}
+	
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException{
+		super.encodeToXml(eventWriter);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Reptiles.SNAKE);
+	}
+	
+	public void decodeFromXml(Element element) {  
+		setPoisonous(Boolean.valueOf(element.getElementsByTagName("isPoisonous").item(0).getTextContent()));  	
+ 	} 
+	
 	
 	@SuppressWarnings("deprecation")
 	public double getPredisposition(){

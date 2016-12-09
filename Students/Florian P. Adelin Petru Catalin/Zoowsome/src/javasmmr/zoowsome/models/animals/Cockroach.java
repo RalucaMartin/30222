@@ -1,13 +1,14 @@
 package javasmmr.zoowsome.models.animals;
 
-import javasmmr.zoowsome.models.animals.Constants.Animals;
-
 public class Cockroach extends Insect {
-	public Cockroach() {
-		super();
-		this.setNrOfLegs(8);
-		this.setName(Animals.Insects.COCKROACH);
-		this.canFly=false;
-		this.isDangerous=false;
+	public Cockroach(){
+		this("Cockroach",8,false,false);
+	}
+	public Cockroach(String name, int nrOfLegs, boolean canFly, boolean isDangerous) {
+		super(0.2,0.5);
+		setNrOfLegs(nrOfLegs);
+		setName(name);
+		setCanFly(canFly);
+		setDangerous(isDangerous);
 	}
 }

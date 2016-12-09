@@ -2,6 +2,7 @@ package javasmmr.zoowsome.models.animals;
 
 public abstract class Insect extends Animal{
 
+
 	private boolean canFly;
 	private boolean isDangerous;
 	
@@ -20,9 +21,9 @@ public abstract class Insect extends Animal{
 	public void setIsDangerous(boolean isDangerous){
 		this.isDangerous = isDangerous;
 	}
-	
-	public Insect() {
-		// TODO Auto-generated constructor stub
+	public Insect(){
+		
 	}
+
 
 }

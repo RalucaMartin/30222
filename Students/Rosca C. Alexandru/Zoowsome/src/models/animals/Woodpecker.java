@@ -1,17 +1,27 @@
 package models.animals;
 
+import static repositories.AnimalRepository.createNode;
+
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
+
+import org.w3c.dom.Element;
+
+import services.factories.Constants;
+
 public class Woodpecker extends Bird{
 
 	private int noOfEggs;
-	/*
+	
 	public Woodpecker(){
+		super(1, 0.1);
 		nrOfLegs = 4;
 		name = "Wookpecker";
 		avgFlightAltitude = 10;
 		migrate = false;
 		setNoOfEggs(4);
 	}
-	*/
+	
 	
 	public Woodpecker(int noOfEggs, boolean migrate, int avgFlightAltitude){
 		super(1, 0.1);
@@ -21,7 +31,16 @@ public class Woodpecker extends Bird{
 		this.migrate = migrate;
 		this.avgFlightAltitude = avgFlightAltitude;
 	}
-
+	
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException{
+		super.encodeToXml(eventWriter);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Birds.WOODPECKR);
+	}
+	
+	public void decodeFromXml(Element element) {  
+		setNoOfEggs(Integer.valueOf(element.getElementsByTagName("noOfEggs").item(0).getTextContent()));  	
+ 	}
+	
 	public int getNoOfEggs() {
 		return noOfEggs;
 	}
