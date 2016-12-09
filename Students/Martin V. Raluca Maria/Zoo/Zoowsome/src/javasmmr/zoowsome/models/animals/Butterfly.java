@@ -33,7 +33,7 @@ public class Butterfly extends Insect {
 	
 	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
 		super.encodeToXml(eventWriter);
-		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animal.Insect.Butterfly);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Insects.Butterfly);
 	}
 
 	}

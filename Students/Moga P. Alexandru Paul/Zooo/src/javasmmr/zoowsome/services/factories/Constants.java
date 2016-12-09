@@ -34,6 +34,15 @@ public final class Constants {
 			public static final String Spider = "Spider";
 			public static final String Cockroach = "Cockroach";
 		}
+
+	}
+	public static final class Employees{
+		public static final String CARETAKERS="Caretakers";
+		public static final class Caretakers{
+			public static final String TCO_SUCCES = "SUCCES";
+			public static final String TCO_KILLED = "KILLED";
+			public static final String TCO_NO_TIME = "NO TIME";
+		}
 	}
 
 }

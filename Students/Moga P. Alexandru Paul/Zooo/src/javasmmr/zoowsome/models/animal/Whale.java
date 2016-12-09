@@ -1,16 +1,18 @@
 package javasmmr.zoowsome.models.animal;
 
-import javasmmr.zoowsome.models.animal.Aquatic.Enum;
 
 public class Whale extends Aquatic{
 
 	public Whale() {
-		super();
-		// TODO Auto-generated constructor stub
-		this.setNrOfLegs(0);
-		this.setName("Whale");
-		this.setAvgSwimDetpth(3000);
-		this.setWaterType(Enum.saltwater);
+		this("Whale",0,2000,Water.SALTWATER);
+	}
+
+	public Whale(String name, int nrOfLegs, int avgSwimDepth, Water waterType){
+		super(0.3, 0.6);
+		setName(name);
+		setNrOfLegs(nrOfLegs);
+		setAvgSwimDetpth(avgSwimDepth);
+		setWaterType(waterType);
 	}
 	
 

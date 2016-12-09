@@ -2,9 +2,14 @@ package javasmmr.zoowsome.models.animals;
 
 public abstract class Aquatic extends Animal{
 	
+
 	private int avgSwimDepth;
-	public enum water{ saltWater, freshWater};
-	private water waterType;
+	public enum Water{ SALTWATER, FRESHWATER};
+	/**
+	 * Enums are classes  
+	 * Instances of an enum are constants and should follow the conventions for constants. 
+	 */
+	private Water waterType;
 	
 	public int getAvgSwimDepth(){
 		return this.avgSwimDepth;
@@ -14,16 +19,15 @@ public abstract class Aquatic extends Animal{
 		this.avgSwimDepth = avgSwimDepth;
 	}
 	
-	public water getWaterType(){
+	public Water getWaterType(){
 		return this.waterType;
 	}
 	
-	public void setWaterType(water waterType){
+	public void setWaterType(Water waterType){
 		this.waterType = waterType;
 	}
-
-	public Aquatic() {
-		// TODO Auto-generated constructor stub
+	public Aquatic(){
+		
 	}
 
 }

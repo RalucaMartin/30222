@@ -2,13 +2,15 @@ package javasmmr.zoowsome.models.animal;
 
 public class Lizard extends Reptile {
 
-	public Lizard() {
-		super();
-		// TODO Auto-generated constructor stub
-		this.setNrOfLegs(4);
-		this.setName("Lizard");
-		this.setIsLaysEggs(true);
-		
-	}
+		public Lizard() {
+			this("Lizard",4,true);
+		}
+
+		public Lizard(String name, int nrOfLegs, boolean layEggs){
+			super(0.1, 0.1);
+			setName(name);
+			setNrOfLegs(nrOfLegs);
+			setLaysEggs(layEggs);
+		}
 	
 }

@@ -1,9 +1,10 @@
 package controllers;
 
-import services.factories.animal.AnimalFactory;
+import services.factories.*;
 import services.factories.animal.SpeciesFactory;
 import services.factories.employee.CaretakerFactory;
 
+import java.lang.reflect.Field;
 import java.util.Random;
 
 import models.animals.*;
@@ -17,78 +18,25 @@ public class MainController {
 
 	public static void main(String[] args) throws Exception {
 		
-		
-        AnimalFactory abstractFactory = new AnimalFactory();
-        /*
-        SpeciesFactory speciesFactory1 = abstractFactory.getSpeciesFactory(Constants.Species.MAMMALS);
-        Animal animal = speciesFactory1.getAnimal(Constants.Animals.Mammals.MONKEY);
-        System.out.printf("We have an animal with %d legs!\n", animal.getNrOfLegs());
-        */
-		
-
-        SpeciesFactory speciesFactoryMammals = abstractFactory.getSpeciesFactory(Constants.Species.MAMMALS);
-        SpeciesFactory speciesFactoryReptiles = abstractFactory.getSpeciesFactory(Constants.Species.REPTILES);
-        SpeciesFactory speciesFactoryInsects = abstractFactory.getSpeciesFactory(Constants.Species.INSECTS);
-        SpeciesFactory speciesFactoryBirds = abstractFactory.getSpeciesFactory(Constants.Species.BIRDS);
-        SpeciesFactory speciesFactoryAquatic = abstractFactory.getSpeciesFactory(Constants.Species.AQUATICS);
-
-        Random random = new Random();
+      //  Random random = new Random();
         Animal[] zoo = new Animal[SIZE_OF_ZOO];
-        int randomIntAnimal;
-
-        for(int i = 0; i < SIZE_OF_ZOO; i++){
-            randomIntAnimal = random.nextInt(12);
-            switch (randomIntAnimal){
-                case 0:
-                    zoo[i] = speciesFactoryMammals.getAnimal(Constants.Animals.Mammals.MONKEY);
-                    break;
-                case 1:
-                    zoo[i] = speciesFactoryMammals.getAnimal(Constants.Animals.Mammals.COW);
-                    break;
-                case 2:
-                    zoo[i] = speciesFactoryMammals.getAnimal(Constants.Animals.Mammals.TIGER);
-                    break;
-                case 3:
-                    zoo[i] = speciesFactoryReptiles.getAnimal(Constants.Animals.Reptiles.CROCODILE);
-                    break;
-                case 4:
-                    zoo[i] = speciesFactoryReptiles.getAnimal(Constants.Animals.Reptiles.LIZZARD);
-                    break;
-                case 5:
-                    zoo[i] = speciesFactoryReptiles.getAnimal(Constants.Animals.Reptiles.TURTLE);
-                    break;
-                case 6:
-                    zoo[i] = speciesFactoryInsects.getAnimal(Constants.Animals.Insects.BUTTERFLY);
-                    break;
-                case 7:
-                    zoo[i] = speciesFactoryInsects.getAnimal(Constants.Animals.Insects.COCKROACH);
-                    break;
-                case 8:
-                    zoo[i] = speciesFactoryInsects.getAnimal(Constants.Animals.Insects.SPIDER);
-                    break;
-                case 9:
-                    zoo[i] = speciesFactoryAquatic.getAnimal(Constants.Animals.Aquatics.WHALE);
-                    break;
-                case 10:
-                    zoo[i] = speciesFactoryAquatic.getAnimal(Constants.Animals.Aquatics.SHARK);
-                    break;
-                case 11:
-                    zoo[i] = speciesFactoryAquatic.getAnimal(Constants.Animals.Aquatics.SALMON);
-                    break;
-                case 12:
-                    zoo[i] = speciesFactoryBirds.getAnimal(Constants.Animals.Birds.EAGLE);
-                    break;
-                case 13:
-                    zoo[i] = speciesFactoryBirds.getAnimal(Constants.Animals.Birds.WAXWING);
-                    break;
-                case 14:
-                    zoo[i] = speciesFactoryBirds.getAnimal(Constants.Animals.Birds.CHICKEN);
-                    break;
-            }
+        
+        for(int i = 0; i <= SIZE_OF_ZOO; i++){
+        for(Class clazz: Constants.Animals.class.getClasses()){
+        	for (Field field: clazz.getDeclaredFields()){
+        		try{
+        			zoo[i] =  field.get(clazz);
+        			//System.out.println(field.get(clazz));
+        		}
+        		catch(Exception e){
+        			e.printStackTrace();
+        		}
+        	}
         }
-        /*for (int i = 0; i < SIZE_OF_ZOO; i++){
+        }
+        for (int i = 0; i < SIZE_OF_ZOO; i++){
             System.out.printf("We have an %s with %d legs!\n", zoo[i].getName(), zoo[i].getNrOfLegs());
-        }*/
+        }
         
         CaretakerFactory CareTakerFactory = new CaretakerFactory();
         Employee[] caretakerTeam = new Employee[NR_CARETAKERS];
@@ -122,5 +70,6 @@ public class MainController {
         	System.out.println(e.getName() + " id: " + e.getId() + " " + ((Caretaker)e).getWorkingHours() + "hours dead = " + e.isDead());
         }
 	}
+
 }
 	

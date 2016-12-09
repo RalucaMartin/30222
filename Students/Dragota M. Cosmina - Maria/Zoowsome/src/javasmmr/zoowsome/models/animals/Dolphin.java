@@ -2,7 +2,7 @@ package javasmmr.zoowsome.models.animals;
 
 public class Dolphin extends Aquatic{
 
-	public Dolphin (int noOfLegs, String name, int avgSwimDepth, water waterType) {
+	public Dolphin (int noOfLegs, String name, int avgSwimDepth, Water waterType) {
 		setNoOfLegs(noOfLegs);
 		setName(name);
 		setAvgSwimDepth(avgSwimDepth);
@@ -12,7 +12,7 @@ public class Dolphin extends Aquatic{
 	
 	public Dolphin() {
 		// TODO Auto-generated constructor stub
-		this(0, "Delfinul de Amazon", 150, water.saltWater);
+		this(0, "Delfinul de Amazon", 150, Water.SALTWATER);
 	}
 
 }

@@ -9,11 +9,11 @@ public class ReptileFactory extends SpeciesFactory {
 
 	@Override
 	public Animal getAnimal(String type) throws Exception {
-		if (Constants.Animals.Reptiles.Chameleon.equals(type)) {
+		if (Constants.Animals.Reptiles.CHAMELEON.equals(type)) {
 			return new Chameleon(); // leave empty constructor, for now!
-		} else if (Constants.Animals.Reptiles.Tortoise.equals(type)) {
+		} else if (Constants.Animals.Reptiles.TORTOISE.equals(type)) {
 			return new Tortoise();
-		} else if (Constants.Animals.Reptiles.Alligator.equals(type)) {
+		} else if (Constants.Animals.Reptiles.ALLIGATOR.equals(type)) {
 			return new Alligator();
 		} else {
 			throw new Exception("Invalid animal exception!");

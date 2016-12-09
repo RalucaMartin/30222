@@ -3,11 +3,14 @@ package javasmmr.zoowsome.models.animal;
 public class Turtle extends Reptile{
 
 	public Turtle() {
-		super();
-		// TODO Auto-generated constructor stub
-		this.setNrOfLegs(4);
-		this.setName("Turtle");
-		this.setIsLaysEggs(true);
+		this("Turtle",4,true);;
+	}
+
+	public Turtle(String name, int nrOfLegs, boolean layEggs){
+		super(0.1, 0.1);
+		setName(name);
+		setNrOfLegs(nrOfLegs);
+		setLaysEggs(layEggs);
 	}
 	
 }

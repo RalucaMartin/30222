@@ -3,12 +3,15 @@ package javasmmr.zoowsome.models.animal;
 public class Eagle extends Bird {
 
 	public Eagle() {
-		super();
-		// TODO Auto-generated constructor stub
-		this.setNrOfLegs(2);
-		this.setName("Eagle");
-		this.setMigrates(false);
-		this.setAvgFlightAltitude(2000);
+		this("Eagle",2,false,1594);
 	}
+
+	public Eagle(String name, int nrOfLegs, boolean migrates, int avgFlightAltitude) {
+		super(0.1, 0.2);
+		setName(name);
+		setNrOfLegs(nrOfLegs);
+		setMigrates(migrates);
+		setAvgFlightAltitude(avgFlightAltitude);
+		}
 	
 }

@@ -4,12 +4,15 @@ package javasmmr.zoowsome.models.animal;
 public class Dolphin extends Aquatic {
 
 	public Dolphin() {
-		super();
-		// TODO Auto-generated constructor stub
-		this.setNrOfLegs(0);
-		this.setName("Dolphin");
-		this.setAvgSwimDetpth(1000);
-		this.setWaterType(Enum.saltwater);
+		this("Dolphin",0,1000,Water.SALTWATER);
+	}
+
+	public Dolphin(String name, int nrOfLegs, int avgSwimDepth, Water waterType){
+		super(0.3, 0.1);
+		setName(name);
+		setNrOfLegs(nrOfLegs);
+		setAvgSwimDetpth(avgSwimDepth);
+		setWaterType(waterType);
 	}
 	
 

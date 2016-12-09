@@ -1,13 +1,14 @@
 package javasmmr.zoowsome.models.animals;
 
-import javasmmr.zoowsome.models.animals.Constants.Animals;
-
 public class Eagle extends Bird {
-	public Eagle() {
-		super();
-		this.setName(Animals.Birds.EAGLE);
-		this.setNrOfLegs(4);
-		this.avgFlightAltitude=1500;
-		this.migrates=false;
+	public Eagle(){
+		this("Eagle",2,300,true);
+	}
+	public Eagle(String name, int nrOfLegs, int avgFlightAltitude, boolean migrates){
+		super(0.2,0.5);
+		setName(name);
+		setNrOfLegs(4);
+		setAvgFlightAltitude(avgFlightAltitude);
+		setMigrates(migrates);
 	}
 }

@@ -25,9 +25,9 @@ public abstract class Mammal extends Animal {
 	public void setPercBodyHair(float percBodyHair){
 		this.percBodyHair = percBodyHair;
 	}
-	
-	public Mammal() {
-		// TODO Auto-generated constructor stub
+	public Mammal(){
+		
 	}
+
 	
 }

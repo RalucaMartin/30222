@@ -1,13 +1,14 @@
 package javasmmr.zoowsome.models.animals;
 
-import javasmmr.zoowsome.models.animals.Constants.Animals;
-
 public class Monkey extends Mammal {
-	public Monkey() {
-		super();
-		this.setNrOfLegs(4);
-		this.setName(Animals.Mammals.MONKEY);
-		this.normalBodyTemp=40;
-		this.percBodyHair=95;
+	public Monkey(){
+		this("Monkey",4,38,90);
+	}
+	public Monkey(String name, int nrOfLegs, float normalBodyTemp, float percBodyHair) {
+		super(0.2,0.5);
+		setNrOfLegs(nrOfLegs);
+		setName(name);
+		setNormalBodyTemp(normalBodyTemp);
+		setPercBodyHair(percBodyHair);
 	}
 }

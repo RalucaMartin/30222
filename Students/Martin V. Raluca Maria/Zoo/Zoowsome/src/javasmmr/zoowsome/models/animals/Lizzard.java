@@ -28,7 +28,7 @@ public class Lizzard extends Reptile{
 	}
 	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
 		super.encodeToXml(eventWriter);
-		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animal.Reptile.Lizzard);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Reptiles.Lizzard);
 	}
 
 }

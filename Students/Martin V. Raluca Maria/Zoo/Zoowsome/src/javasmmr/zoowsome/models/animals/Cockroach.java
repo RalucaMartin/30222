@@ -30,7 +30,7 @@ public class Cockroach extends Insect {
 	}
 	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
 		super.encodeToXml(eventWriter);
-		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animal.Insect.Cockroach);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Insects.Cockroach);
 	}
 }
 	

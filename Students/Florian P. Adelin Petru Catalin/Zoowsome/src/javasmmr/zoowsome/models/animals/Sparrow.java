@@ -1,13 +1,14 @@
 package javasmmr.zoowsome.models.animals;
 
-import javasmmr.zoowsome.models.animals.Constants.Animals;
-
 public class Sparrow extends Bird {
-	public Sparrow() {
-		super();
-		this.setName(Animals.Birds.SPARROW);
-		this.setNrOfLegs(4);
-		this.avgFlightAltitude=800;
-		this.migrates=false;
+	public Sparrow(){
+		this("Sparrow",2,300,true);
+	}
+	public Sparrow(String name, int nrOfLegs, int avgFlightAltitude, boolean migrates){
+		super(0.2,0.5);
+		setName(name);
+		setNrOfLegs(4);
+		setAvgFlightAltitude(avgFlightAltitude);
+		setMigrates(migrates);
 	}
 }

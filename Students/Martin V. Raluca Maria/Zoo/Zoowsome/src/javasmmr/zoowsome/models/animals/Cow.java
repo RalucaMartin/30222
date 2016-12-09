@@ -31,7 +31,7 @@ public class Cow extends Mammal {
 	}
 	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
 		super.encodeToXml(eventWriter);
-		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animal.Mammal.Cow);
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Mammals.Cow);
 	}
 
 }

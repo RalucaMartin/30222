@@ -4,7 +4,10 @@ import javasmmr.zoowsome.repositories.AnimalRepository;
 import javax.swing.text.Element;
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLStreamException;
+import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
 
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
 public abstract class Aquatic extends Animal {
 
 	

@@ -4,7 +4,7 @@ import javasmmr.zoowsome.models.animals.*;
 public class MammalFactory extends SpeciesFactory{
 
 	@Override
-	public Animal getAnimal(String type) {
+	public Animal getAnimal(String type) throws Exception{
 		if (Constants.Animals.Mammals.HORSE.equals(type)) {
 			return new Horse(); // leave empty constructor, for now!
 		} else if (Constants.Animals.Mammals.TIGER.equals(type)) {
@@ -13,10 +13,11 @@ public class MammalFactory extends SpeciesFactory{
 			return new Monkey();
 		}
 		else {
-			throw new Exception(“Invalid animal exception!”);
+			throw new Exception("Invalid animal exception!");
 		}
 	}
-
+	
+}
+	
 	
 
-}

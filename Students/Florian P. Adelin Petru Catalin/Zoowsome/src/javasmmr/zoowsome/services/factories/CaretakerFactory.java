@@ -1,0 +1,14 @@
+package javasmmr.zoowsome.services.factories;
+
+import javasmmr.zoowsome.models.animals.Constants;
+import javasmmr.zoowsome.models.employees.Caretaker;
+import javasmmr.zoowsome.models.employees.Employee;
+
+public class CaretakerFactory extends EmployeeAbstractFactory {
+	public Employee getEmployee(String type) throws Exception {
+		if(Constants.Employees.CARETAKER.equals(type)){
+			return new Caretaker();
+		}
+		else throw new Exception("Invalid employee specifications");
+	}
+}

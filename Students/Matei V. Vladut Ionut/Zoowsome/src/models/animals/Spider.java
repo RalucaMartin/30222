@@ -1,6 +1,6 @@
 package models.animals;
 
-import java.util.Random;
+
 
 public class Spider extends Insect {
 
@@ -17,14 +17,4 @@ public class Spider extends Insect {
 		setDangerPerc(dangerPerc);
 	}
 
-	@Override
-	public boolean kill() {
-		Random random = new Random();
-		int survivingOdds = random.nextInt(10);
-		
-		if ((survivingOdds/10) < dangerPerc){
-			return true;
-		}
-		return false;
-	}
 }

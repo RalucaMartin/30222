@@ -11,9 +11,8 @@ public abstract class Reptile extends Animal {
 	public void setLaysEggs(boolean laysEggs){
 		this.laysEggs = laysEggs;
 	}
-	
-	public Reptile() {
-		// TODO Auto-generated constructor stub
+	public Reptile(){
+		
 	}
 
 }

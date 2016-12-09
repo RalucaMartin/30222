@@ -3,12 +3,14 @@ package javasmmr.zoowsome.models.animal;
 public class Cockroach extends Insect {
 
 	public Cockroach() {
-		super();
-		// TODO Auto-generated constructor stub
-		this.setNrOfLegs(6);
-		this.setName("Cockroach");
-		this.setCanFly(false);
-		this.setDangerous(false);
+		this("Cockroach",6,false,false);
 	}
-
+	
+	public Cockroach(String name, int nrOfLegs, boolean canFly, boolean isDangerous){
+		super(0.1, 0.1);
+		setName(name);
+		setNrOfLegs(nrOfLegs);
+		setCanFly(canFly);
+		setDangerous(isDangerous);
+	}
 }

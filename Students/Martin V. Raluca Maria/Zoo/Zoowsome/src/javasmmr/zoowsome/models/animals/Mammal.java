@@ -30,8 +30,8 @@ public abstract class Mammal extends Animal {
 	}
 	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
 		super.encodeToXml(eventWriter);
-		createNode(eventWriter, "normalBodyTemp", String.valueOf(normalBodyTemp()));
-		createNode(eventWriter, "percBodyHair", String.valueOf(percBodyHair()));
+		createNode(eventWriter, "normalBodyTemp", String.valueOf(getNormalBodyTemp()));
+		createNode(eventWriter, "percBodyHair", String.valueOf(getPercBodyHair()));
 	}
 	public void decodeFromXml(Element element) {
 		setTakenCareOf(Boolean.valueOf(element.getElementsByTagName("normalBodyTemp").item(0).getTextContent()));

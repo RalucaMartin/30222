@@ -4,6 +4,11 @@ import javasmmr.zoowsome.repositories.AnimalRepository;
 import javax.swing.text.Element;
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLStreamException;
+import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
+
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
+
 
 public abstract class Bird extends Animal {
 	
@@ -33,8 +38,8 @@ public abstract class Bird extends Animal {
 	}
 	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
 		super.encodeToXml(eventWriter);
-		createNode(eventWriter, "avgFlightAltitude", String.valueOf(avgFlightAltitude()));
-		createNode(eventWriter, "migrates", String.valueOf(migrates()));
+		createNode(eventWriter, "avgFlightAltitude", String.valueOf(getAvgFlightAltitude()));
+		createNode(eventWriter, "migrates", String.valueOf(getMigrates()));
 	}
 	public void decodeFromXml(Element element) {
 		setTakenCareOf(Boolean.valueOf(element.getElementsByTagName("avgFlightAltitude").item(0).getTextContent()));

@@ -3,12 +3,15 @@ package javasmmr.zoowsome.models.animal;
 public class Flamingo extends Bird {
 
 	public Flamingo() {
-		super();
-		// TODO Auto-generated constructor stub
-		this.setNrOfLegs(2);
-		this.setName("Flamingo");
-		this.setMigrates(false);
-		this.setAvgFlightAltitude(500);
+		this("Flamingo",2,false,500);
 	}
+
+	public Flamingo(String name, int nrOfLegs, boolean migrates, int avgFlightAltitude) {
+		super(0.1, 0.1);
+		setName(name);
+		setNrOfLegs(nrOfLegs);
+		setMigrates(migrates);
+		setAvgFlightAltitude(avgFlightAltitude);
+		}
 	
 }

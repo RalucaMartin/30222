@@ -1,14 +1,14 @@
 package javasmmr.zoowsome.models.animals;
 
-import javasmmr.zoowsome.models.animals.Constants.Animals;
-
 public class Lizzard extends Reptile {
 
-	public Lizzard() {
-		super();
-		this.setName(Animals.Reptiles.LIZZARD);
-		this.setNrOfLegs(4);
-		this.layEggs=true;
+	public Lizzard(){
+		this("Lizzard",4,true);
 	}
-	
+	public Lizzard(String name, int nrOfLegs, boolean layEggs) {
+		super(0.2,0.5);
+		setName(name);
+		setNrOfLegs(nrOfLegs);
+		setLayEggs(layEggs);
+	}
 }
